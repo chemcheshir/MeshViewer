@@ -1,0 +1,424 @@
+THIRD-PARTY SOFTWARE NOTICES
+================================
+
+Product: Mesh3DViewer
+Prepared for the Mesh3DViewer 1.7 source tree (v13.46-era dependency set)
+Prepared: 2026-10-03
+
+This product includes, or may include in compiled/standalone builds, third-party
+software distributed under separate licenses.
+
+IMPORTANT
+---------
+1. This file is a NOTICE/attribution summary. It does not replace the full
+   license texts supplied by the third-party projects.
+2. Before a public binary release, keep the original license files from the
+   exact wheels/packages used for that build and distribute them with the
+   application (for example in a "licenses" directory).
+3. Mesh3DViewer's requirements.txt currently uses minimum versions (">="), so
+   the exact third-party versions in a binary build may differ from build to
+   build. Pin exact versions before a release if reproducible licensing records
+   are required.
+4. A standalone build may include transitive/native libraries carried inside
+   wheels (for example Qt libraries, libspatialindex, OpenBLAS, or zstd). Their
+   own license files remain authoritative and should be preserved.
+5. This notice does not change the license of Mesh3DViewer itself.
+
+DIRECT RUNTIME DEPENDENCIES
+===========================
+
+1) Qt for Python / PySide6 / Shiboken6 / Qt 6 runtime libraries
+---------------------------------------------------------------
+Project: Qt for Python / PySide6
+Used for: GUI, widgets, OpenGL widget integration, threading/signals
+Declared dependency: PySide6>=6.5
+Upstream:
+  https://pypi.org/project/PySide6/
+  https://doc.qt.io/qtforpython/
+License expression for PySide6:
+  LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+  (or a separate commercial Qt license, if the distributor holds one)
+
+PySide6 wheels also contain/require Qt libraries and Shiboken components.
+When distributing under the open-source option, the distributor must comply
+with the applicable LGPL/GPL terms. For typical LGPL use, keep the Qt DLLs as
+replaceable dynamic libraries and ship the applicable Qt/PySide/Shiboken
+license texts with the application.
+
+Copyright and trademark rights remain with The Qt Company Ltd., the Qt Project,
+and their contributors.
+
+License information:
+  https://www.qt.io/licensing/
+  https://www.gnu.org/licenses/lgpl-3.0.html
+  https://www.gnu.org/licenses/gpl-3.0.html
+
+
+2) PyOpenGL
+-----------
+Project: PyOpenGL / OpenGL-ctypes
+Used for: OpenGL API bindings
+Declared dependency: PyOpenGL>=3.1.6
+Upstream:
+  https://pypi.org/project/PyOpenGL/
+  https://github.com/mcfletch/pyopengl
+License: BSD-style
+
+Primary notice:
+  Copyright (c) 2005-2022, Michael C. Fletcher and Contributors
+  All rights reserved.
+
+PyOpenGL also contains code derived from earlier PyOpenGL releases, pyglet,
+OSMesa support code, and other BSD/MIT-style components. The complete upstream
+PyOpenGL license file must be retained:
+  https://raw.githubusercontent.com/mcfletch/pyopengl/master/license.txt
+
+Primary BSD terms:
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  * Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+  * The name of Michael C. Fletcher, or the name of any Contributor, may not be
+    used to endorse or promote products derived from this software without
+    specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  POSSIBILITY OF SUCH DAMAGE.
+
+
+3) NumPy
+--------
+Project: NumPy
+Used for: array math, geometry, numerical processing
+Declared dependency: numpy>=1.25
+Upstream:
+  https://numpy.org/
+  https://numpy.org/doc/stable/license
+Primary license: BSD-3-Clause
+Primary copyright:
+  Copyright (c) 2005-present, NumPy Developers.
+  All rights reserved.
+
+BSD-3-Clause terms:
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice,
+     this list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation
+     and/or other materials provided with the distribution.
+  3. Neither the name of the copyright holder nor the names of its contributors
+     may be used to endorse or promote products derived from this software
+     without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  POSSIBILITY OF SUCH DAMAGE.
+
+NOTE:
+NumPy wheels may contain additional third-party native libraries and license
+notices (for example OpenBLAS and related runtime components, depending on
+platform/build). Preserve the exact NumPy wheel's license directory in the
+binary distribution.
+
+
+4) python-zstandard / zstandard
+-------------------------------
+Project: python-zstandard
+Used for: reading compressed .blend data / Zstandard decompression
+Declared dependency: zstandard>=0.22
+Upstream:
+  https://github.com/indygreg/python-zstandard
+License: BSD-3-Clause
+Primary copyright:
+  Copyright (c) 2016-present, Gregory Szorc
+  All rights reserved.
+
+The package may bundle the Zstandard C library. Zstandard source files state
+that they are available under a BSD-style license and GPLv2; Mesh3DViewer may
+rely on the BSD-style option for normal redistribution.
+
+Upstream license:
+  https://github.com/indygreg/python-zstandard/blob/main/LICENSE
+
+
+5) trimesh
+----------
+Project: trimesh
+Used for: advanced mesh processing / optional boolean workflows
+Declared dependency: trimesh>=4.4
+Upstream:
+  https://github.com/mikedh/trimesh
+License: MIT
+Copyright:
+  Copyright (c) 2023 Michael Dawson-Haggerty
+
+MIT License:
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
+
+NOTE:
+trimesh itself contains some files under other compatible licenses. Preserve
+the license data from the exact installed trimesh distribution.
+
+
+6) manifold3d / Manifold
+------------------------
+Project: Manifold / manifold3d Python bindings
+Used for: robust mesh boolean operations
+Declared dependency: manifold3d>=3.0
+Upstream:
+  https://pypi.org/project/manifold3d/
+  https://github.com/elalish/manifold
+License: Apache License 2.0
+Copyright:
+  Copyright The Manifold Authors
+
+The complete Apache License 2.0 text must accompany distributions containing
+this component:
+  https://www.apache.org/licenses/LICENSE-2.0
+
+
+7) Rtree
+--------
+Project: Rtree
+Used for: spatial indexing used by geometry libraries
+Declared dependency: rtree>=1.3
+Upstream:
+  https://pypi.org/project/rtree/
+  https://github.com/Toblerity/rtree
+License: MIT
+Copyright:
+  Copyright (c) 2018: Sean C. Gillies, Howard Butler and contributors
+
+MIT License:
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
+
+Rtree wheels may bundle libspatialindex. libspatialindex 1.8.0 and later are
+licensed under the MIT License. Preserve the libspatialindex notice from the
+exact Rtree wheel used in the build.
+Upstream:
+  https://github.com/libspatialindex/libspatialindex
+
+
+8) mapbox-earcut / mapbox_earcut
+--------------------------------
+Project: mapbox_earcut Python bindings and Mapbox Earcut
+Used for: polygon triangulation
+Declared dependency: mapbox-earcut>=1.0
+Upstream:
+  https://pypi.org/project/mapbox-earcut/
+  https://github.com/skogler/mapbox_earcut_python
+  https://github.com/mapbox/earcut
+License: ISC
+
+Python bindings notice:
+  Copyright (c) 2018, Samuel Kogler
+
+ISC License:
+  Permission to use, copy, modify, and/or distribute this software for any
+  purpose with or without fee is hereby granted, provided that the above
+  copyright notice and this permission notice appear in all copies.
+
+  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+  SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+  OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+  CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+The embedded Earcut implementation has its own ISC notice. Preserve the exact
+license file provided with the installed mapbox-earcut distribution.
+
+
+9) CPython / Python standard library (standalone builds)
+--------------------------------------------------------
+Project: CPython
+Used for: Python runtime and standard library embedded/carried by standalone
+         builds
+Build scripts currently target: Python 3.11 or 3.12 for Nuitka builds
+Upstream:
+  https://www.python.org/
+  https://docs.python.org/3.12/license.html
+License: Python Software Foundation License Version 2 plus historical license
+         stack and incorporated-software notices
+
+When a standalone distribution includes CPython runtime files, preserve the
+complete CPython LICENSE file and incorporated-software notices from the exact
+Python version used for the build.
+
+Python and the Python logos are trademarks or registered trademarks of the
+Python Software Foundation.
+
+
+BUILD / PACKAGING TOOLS
+=======================
+
+These tools are used by the repository's build scripts. They are not necessarily
+present as runtime packages in every distributed Mesh3DViewer folder.
+
+10) Nuitka 4.2.2
+-----------------
+The repository's build_nuitka.bat pins:
+  nuitka==4.2.2
+
+Upstream:
+  https://pypi.org/project/Nuitka/
+  https://github.com/Nuitka/Nuitka
+License for Nuitka 4.x:
+  GNU Affero General Public License v3 or later (AGPL-3.0-or-later)
+  WITH the Nuitka Runtime Library Exception for compiled target code.
+
+The Nuitka Runtime Library Exception permits compiled target code containing
+Nuitka runtime support to be distributed under terms chosen by the application
+author, provided the exception's conditions are met. The exception does not
+relicense the Nuitka compiler itself.
+
+Relevant texts:
+  https://github.com/Nuitka/Nuitka/blob/develop/LICENSE.txt
+  https://github.com/Nuitka/Nuitka/blob/develop/LICENSE-RUNTIME.txt
+
+Nuitka copyright:
+  Copyright (c) 2008-2026 Kay Hayen
+
+
+11) ordered-set
+---------------
+Used by: Nuitka build environment
+Upstream:
+  https://pypi.org/project/ordered-set/
+License: MIT
+Author: Elia Robyn Lake
+
+This is a build-time dependency and is normally not required to be distributed
+with the finished application unless files from it are actually bundled.
+
+
+12) PyInstaller (alternative build.bat path)
+--------------------------------------------
+The repository also contains an alternative PyInstaller build script.
+
+Upstream:
+  https://pyinstaller.org/
+  https://github.com/pyinstaller/pyinstaller
+License:
+  GPL-2.0-or-later with the PyInstaller Bootloader Exception
+  (some files are additionally/alternatively under Apache-2.0)
+
+PyInstaller's Bootloader Exception expressly permits executable bundles
+generated from application source to be distributed under the application's
+chosen license, subject to the licenses of the application's dependencies.
+
+PyInstaller notice:
+  Copyright (c) 2010-2023, PyInstaller Development Team
+  Copyright (c) 2005-2009, Giovanni Bajo
+  Based on previous work Copyright (c) 2002 McMillan Enterprises, Inc.
+
+Relevant text:
+  https://github.com/pyinstaller/pyinstaller/blob/develop/COPYING.txt
+
+
+13) MinGW-w64 / GCC runtime components (conditional)
+-----------------------------------------------------
+build_nuitka.bat uses Nuitka's --mingw64 build path.
+
+If the final Windows distribution contains GCC/MinGW runtime DLLs such as
+libgcc, libstdc++ or winpthread, distribute the corresponding license files
+from the exact compiler/runtime version used. GCC runtime libraries are
+commonly distributed under GPL terms with the GCC Runtime Library Exception,
+which permits their use by non-GPL applications under the exception's terms.
+
+Do not assume these DLLs are present; verify the final build folder.
+
+
+EXTERNAL OPTIONAL INTEGRATION
+=============================
+
+Blender
+-------
+Mesh3DViewer can locate an independently installed Blender executable and invoke
+it externally to export .blend scenes to GLB. Blender is not declared as a
+bundled Python/runtime dependency in requirements.txt.
+
+If Blender itself is ever redistributed together with Mesh3DViewer, its GPL
+license obligations must be handled separately. Merely calling a separately
+installed Blender executable does not make Blender part of this distribution.
+
+
+RELEASE CHECKLIST
+=================
+
+Before publishing a compiled Mesh3DViewer build:
+
+- Pin exact dependency versions instead of relying only on ">=" requirements.
+- Record the exact Python version used.
+- Preserve license files from the exact PySide6/Qt, NumPy, PyOpenGL,
+  python-zstandard, trimesh, manifold3d, Rtree/libspatialindex and
+  mapbox-earcut distributions.
+- Preserve CPython's complete LICENSE when Python runtime files are included.
+- Preserve Qt/PySide/Shiboken LGPL/GPL texts and keep LGPL-covered Qt DLLs
+  replaceable when using the LGPL route.
+- Preserve Apache-2.0 text for manifold3d.
+- Verify whether the final package includes compiler runtime DLLs and add their
+  notices if present.
+- If using Nuitka, retain a copy of its runtime-exception terms in your build
+  records.
+- If using PyInstaller, retain its COPYING.txt in your build records.
+- For best accuracy, generate a license inventory from the exact final build
+  environment and compare it against this file.
+
+END OF THIRD-PARTY NOTICES
