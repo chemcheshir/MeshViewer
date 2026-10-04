@@ -23,7 +23,7 @@ Windows 10/11, 64-bit.
 
 Исходный код не распространяется.
 
-Copyright © 2026 Денис Ляпун. All rights reserved.
+Copyright © 2026 Денис Л. All rights reserved.
 
 Подробные условия использования находятся в файле LICENSE.txt.
 
